@@ -1,15 +1,9 @@
 # -*- coding:utf-8 -*-
 
-from pyevolve import G2DList
 from pyevolve import GSimpleGA
 from pyevolve import Selectors
-from pyevolve import Crossovers
 
 from genomes import G3DList
-
-from pyevolve.GenomeBase import GenomeBase
-
-from pyevolve import Mutators
 
 from random import shuffle, random, randint
 from copy import copy
@@ -18,6 +12,7 @@ from copy import copy
 # Disciplinas
 #
 
+# 1o Período
 # 1: Algoritmos Estruturados
 # 2: Língua Portuguesa
 # 3: Teoria Geral da Administração
@@ -25,6 +20,7 @@ from copy import copy
 # 5: Filosofia
 # 6: Introdução à Computação
 
+# 2o Período
 # 7: Algoritmos e Linguagens de Programação
 # 8: Arquitetura e Organização de Computadores
 # 9: Cálculo
@@ -32,18 +28,70 @@ from copy import copy
 # 11: Inglês Instrumental
 # 12: Sociologia
 
-
-# 13: Administração da ProduçãoEstatística
+# 3o Período
+# 13: Administração da Produção
 # 14: Análise de Sistemas
 # 15: Estatística
 # 16: Programação Orientada a Objetos
 # 17: Sistemas Operacionais
 
+# 4o Período
+# 18: Administração de Sistemas Operacionais
+# 19: Desenvolvimento de Sistemas Orientado a Objetos
+# 20: Engenharia de Software
+# 21: Estruturas de Dados
+# 22: Redes de Comunicação
+
+# 5o Período
+# 23: Bancos de Dados
+# 24: Desenvolvimento de Sistemas para Web
+# 25: Direito Virtual
+# 26: Gerência de Projetos de Software
+# 27: Metodologia de Pesquisa Científica
+# 28: Redes Wireless
+# 29: Sistemas Distribuídos
+
+# 6o Período
+# 30: Administração de Bancos de Dados
+# 31: Administração e Segurança de Redes
+# 32: Comunicações Móveis
+# 33: Governança em Tecnologia da Informação
+# 34: Interface Homem-Máquina
+# 35: Qualidade de Software
+# 36: Segurança e Auditoria em Informática
+
+# 7o Período
+# 37: Computação Gráfica
+# 38: Fundamentos de Hardware e Microcontroladores
+# 39: Inteligência Artificial
+# 40: Orientação de Estágio
+# 41: Projeto Integrado
+# 42: Sistemas Embarcados
+
+# 8o Período
+# 43: Administração de Comércio Eletrônico
+# 44: Empreendedorismo
+# 45: Infraestrutura de Tecnologia da Informação
+# 46: Inovação e Novas Tecnologias
+# 47: Optativa
+# 48: Perícia em Informática
+# 49: Processamento de Imagens
+# 50: TCC
+
 disciplinas = [
     [1, 1, 2, 2, 3, 3, 4, 4, 5, 6],
     [7, 7, 8, 8, 9, 9, 10, 10, 11, 12],
-    [13, 13, 14, 14, 15, 15, 16, 16, 17, 17]
+    [13, 13, 14, 14, 15, 15, 16, 16, 17, 17],
+    [18, 18, 19, 19, 20, 20, 21, 21, 22, 22],
+    [23, 23, 24, 24, 25, 26, 26, 27, 28, 29],
+    [30, 30, 31, 31, 32, 33, 33, 34, 35, 36],
+    [37, 37, 38, 38, 39, 39, 40, 41, 42, 42],
+    [43, 44, 44, 45, 46, 47, 48, 48, 49, 50]
 ]
+
+
+
+
 
 def GradeInitializator(genome, **args):
     """ Inicialização da grade """
@@ -143,7 +191,8 @@ def eval_func(chromosome):
 
 # Genome instance
 #genome = G2DList.G2DList(2, 5)
-genome = G3DList(3, 2, 5)
+# G3DList(periodos, horarios_dia, dias_semana)
+genome = G3DList(8, 2, 5)
 genome.initializator.set(GradeInitializator)
 
 

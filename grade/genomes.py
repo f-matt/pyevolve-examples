@@ -46,9 +46,6 @@ class G3DList(GenomeBase):
     def printChromossome(self):
         print self.gens
 
-
-
-
     def getWidth(self):
         return self.width
 
@@ -59,3 +56,15 @@ class G3DList(GenomeBase):
 
     def getDepth(self):
         return self.depth
+
+    def get_horarios_disciplina(self, disciplina_id):
+
+        horarios = []
+
+        for i in range(self.height):
+            for j in range(self.width):
+                for k in range(self.depth):
+                    if self.gens[i][j][k] == disciplina_id:
+                        horarios.append((j, k));
+
+        return horarios

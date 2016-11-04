@@ -5,9 +5,22 @@ from genomes import G3DList
 
 import numpy as np
 
+
+class Disciplina(object):
+
+    def __init__(self, id, nome, periodo, ch):
+        self.id = id
+        self.nome = nome
+        self.periodo = periodo
+        self.ch = ch
+
+
+
+
 class Professor(object):
 
-    def __init__(self, sigla, ch_max, disciplinas, preferencias):
+    def __init__(self, id, sigla, ch_max, disciplinas, preferencias):
+        self.id = id
         self.sigla = sigla
         self.ch_max = ch_max
         self.disciplinas = copy(disciplinas)
@@ -21,7 +34,7 @@ class Professor(object):
 
         for d in self.disciplinas:
 
-            horarios = grade.getIndex(d)
+            horarios = grade.get_horarios_disciplina(d)
 
             for h in horarios:
                 i = h[0]
